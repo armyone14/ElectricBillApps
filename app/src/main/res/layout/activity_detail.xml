@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Info Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋 Bill Details" android:textSize="16sp"
+                android:textStyle="bold" android:textColor="@color/primary"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvDetailMonth" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/label_text" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvDetailUnits" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/label_text" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvDetailRebate" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/label_text" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvDetailTotal" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/label_text" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvDetailFinal" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textStyle="bold" android:textColor="@color/success"/>
+        </LinearLayout>
+
+        <!-- Edit Section -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✏️ Edit Record" android:textSize="16sp"
+            android:textStyle="bold" android:textColor="@color/primary"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Month:" android:textStyle="bold" android:textColor="@color/label_text"
+            android:layout_marginBottom="4dp"/>
+        <Spinner android:id="@+id/spinnerMonthEdit" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/spinner_bg"
+            android:padding="10dp" android:layout_marginBottom="12dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Units (kWh):" android:textStyle="bold"
+            android:textColor="@color/label_text" android:layout_marginBottom="4dp"/>
+        <EditText
+            android:id="@+id/etUnitsEdit"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Enter units e.g. 250  (min 1 – max 1000)"
+            android:inputType="numberDecimal"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:textColorHint="#9E9E9E"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Rebate (0%–5%):"
+                android:textStyle="bold" android:textColor="@color/label_text"/>
+            <TextView android:id="@+id/tvRebateEditValue" android:layout_width="50dp"
+                android:layout_height="wrap_content" android:text="0%"
+                android:textSize="18sp" android:textStyle="bold"
+                android:textColor="@color/primary" android:gravity="end"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekBarRebateEdit" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:max="5"
+            android:progressTint="@color/primary" android:thumbTint="@color/primary"
+            android:layout_marginBottom="16dp"/>
+
+        <Button android:id="@+id/btnUpdate" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="✅ Update Record"
+            android:backgroundTint="@color/primary" android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <Button android:id="@+id/btnDelete" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="🗑️ Delete Record"
+            android:backgroundTint="@color/danger" android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</ScrollView>
