@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-   Sample data extraction rules file; uncomment and customize as necessary.
-   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
-   for details.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Data extraction rules for the Electric Bill app.
+   This ensures the SQLite database containing bill records is backed up.
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
-        <include .../>
-        <exclude .../>
-        -->
+        <!-- Include the database file created by DatabaseHelper -->
+        <include domain="database" path="ElectricBill.db"/>
+        <!-- Optional: Include shared preferences if you have settings -->
+        <include domain="sharedpref" path="."/>
     </cloud-backup>
-    <!--
+
     <device-transfer>
-        <include .../>
-        <exclude .../>
+        <!-- Include the database for direct phone-to-phone transfer -->
+        <include domain="database" path="ElectricBill.db"/>
+        <include domain="sharedpref" path="."/>
     </device-transfer>
-    -->
 </data-extraction-rules>
