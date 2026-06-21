@@ -23,7 +23,7 @@ public class AboutActivity extends AppCompatActivity {
         tvUrl.setOnClickListener(v -> {
             // ⚠️ REPLACE with your actual GitHub URL after pushing
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/YOUR_USERNAME/ElectricBillApp"));
+                    Uri.parse("https://github.com/armyone14/ElectricBill"));
             startActivity(browserIntent);
         });
     }
